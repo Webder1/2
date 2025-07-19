@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maximus Mattingley | Custom Website Design & Development</title>
+  <style>
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f9fb;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      color: #0078d4;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: #004080;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 8px;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    /* Navigation */
+    nav {
+      background: #023060;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+    }
+    nav a {
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+      background: #0166cc;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+      box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.45);
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 60px 0;
+      background: white;
+      text-align: center;
+    }
+    .services h3 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      font-weight: 700;
+      color: #004080;
+    }
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .service-item {
+      background: #e7f0ff;
+      padding: 25px;
+      border-radius: 10px;
+      flex: 1 1 280px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .service-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    }
+    .service-item h4 {
+      margin-top: 0;
+      color: #023060;
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+    .service-item p {
+      font-weight: 300;
+      margin-top: 8px;
+      font-size: 1rem;
+      color: #1a1a1a;
+    }
+
+    /* Process Section */
+    .process {
+      background: #f0f4fa;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .process h3 {
+      font-size: 2rem;
+      color: #004080;
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+    .steps {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+    .step {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      flex: 1 1 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      font-weight: 400;
+    }
+    .step h4 {
+      font-weight: 700;
+      color: #023060;
+      margin-bottom: 15px;
+      font-size: 1.25rem;
+    }
+    .step p {
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #222;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .testimonials h3 {
+      font-size: 2.2rem;
+      margin-bottom: 35px;
+      font-weight: 700;
+      color: #004080;
+    }
+    .testimonial {
+      background: #e7f0ff;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-style: italic;
+      color: #1a1a1a;
+      font-weight: 400;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #023060;
+      font-style: normal;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .contact h3 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      font-weight: 700;
+      color: #004080;
+    }
+    .contact p {
+      font-weight: 300;
+      font-size: 1rem;
+      margin-bottom: 35px;
+      color: #222;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact a {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #0078d4;
+      color: white;
+      font-weight: 600;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      background: #005ea2;
+    }
+
+    /* Footer */
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 15px 20px;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .service-list, .steps {
+        flex-direction: column;
+      }
+      .service-item, .step {
+        flex: none;
+        max-width: 100%;
+      }
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Maximus Mattingley</h1>
+      <p>Custom Website Design & Development for Your Business</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#process">Our Process</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero" role="img" aria-label="Workspace with computer and plants">
+    <div>
+      <h2>Bring Your Business Online with a Stunning Website</h2>
+      <p>Your brand deserves a website that reflects its unique story — built with care, precision, and attention to detail.</p>
+    </div>
+  </section>
+
+  <section id="services" class="services" aria-label="Services offered">
+    <h3>What I Offer</h3>
+    <div class="service-list">
+      <article class="service-item" tabindex="0">
+        <h4>Custom Website Design</h4>
+        <p>Crafting beautiful, unique designs tailored to your brand and business goals that capture your audience’s attention.</p>
+      </article>
+      <article class="service-item" tabindex="0">
+        <h4>Responsive & Mobile-Friendly</h4>
+        <p>Ensuring your website looks flawless and functions perfectly across phones, tablets, and desktops.</p>
+      </article>
+      <article class="service-item" tabindex="0">
+        <h4>SEO Optimization</h4>
+        <p>Optimizing your website structure and content to help your business rank higher on search engines.</p>
+      </article>
+      <article class="service-item" tabindex="0">
+        <h4>Fast & Secure Hosting Setup</h4>
+        <p>Guiding you through fast and secure hosting solutions, so your website stays online and loads quickly.</p>
+      </article>
+      <article class="service-item" tabindex="0">
+        <h4>Ongoing Support & Updates</h4>
+        <p>Providing continuous maintenance, updates, and troubleshooting to keep your website running smoothly.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="process" class="process" aria-label="How I work">
+    <h3>How We Work Together</h3>
+    <div class="steps">
+      <div class="step" tabindex="0">
+        <h4>1. Consultation</h4>
+        <p>We start with a detailed conversation to understand your business, goals, and vision for your website.</p>
+      </div>
+      <div class="step" tabindex="0">
+        <h4>2. Design & Approval</h4>
+        <p>I create initial design mockups for your review and feedback — ensuring we capture your brand perfectly.</p>
+      </div>
+      <div class="step" tabindex="0">
+        <h4>3. Development</h4>
+        <p>Your website is built with clean, efficient code, optimized for speed, responsiveness, and accessibility.</p>
+      </div>
+      <div class="step" tabindex="0">
+        <h4>4. Launch & Training</h4>
+        <p>Once approved, I help you launch your site and provide training so you can manage your content easily.</p>
+      </div>
+      <div class="step" tabindex="0">
+        <h4>5. Support & Growth</h4>
+        <p>I offer ongoing support and updates to keep your website fresh, secure, and aligned with your growing business.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials" aria-label="What clients say">
+    <h3>What My Clients Say</h3>
+    <blockquote class="testimonial" tabindex="0">
+      “Maximus took the time to truly understand our vision and delivered a website beyond our expectations. The process was smooth and enjoyable!”<br />
+      <strong>— Sarah T., Small Business Owner</strong>
+    </blockquote>
+    <blockquote class="testimonial" tabindex="0">
+      “Professional, reliable, and incredibly talented. Our new site boosted our online presence and sales. Highly recommended.”<br />
+      <strong>— James L., Startup Founder</strong>
+    </blockquote>
+    <blockquote class="testimonial" tabindex="0">
+      “From consultation to launch, Maximus was patient and attentive. The website works perfectly on all devices and looks amazing.”<br />
+      <strong>— Monica D., Freelancer</strong>
+    </blockquote>
+  </section>
+
+  <section id="contact" class="contact" aria-label="Contact information">
+    <h3>Get in Touch</h3>
+    <p>Ready to start your website project or have questions? I’m here to help — just reach out!</p>
+    <a href="mailto:maximus@example.com" aria-label="Email Maximus">Email Me</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Maximus Mattingley. All rights reserved.
+  </footer>
+
+</body>
+</html>
